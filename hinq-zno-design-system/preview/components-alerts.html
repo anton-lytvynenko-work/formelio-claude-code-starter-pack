@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Alerts</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 18px 20px; background: var(--bg-paper); font-family: var(--font-body); }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+  .alert {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid;
+    font-size: 14px; line-height: 1.45; letter-spacing: 0.25px;
+  }
+  .alert .icon { width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; }
+  .alert b { font-weight: 600; }
+  .a-info    { background: var(--hinq-info-light);    color: var(--hinq-info-dark);    border-color: var(--hinq-info-main); }
+  .a-success { background: var(--hinq-success-light); color: var(--hinq-success-dark); border-color: var(--hinq-success-main); }
+  .a-warn    { background: var(--hinq-error-light);   color: var(--hinq-error-dark);   border-color: var(--hinq-warning-main); }
+  .a-error   { background: var(--hinq-error-light);   color: var(--hinq-error-dark);   border-color: var(--hinq-error-main); }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="alert a-info">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+      <div><b>Medicom alert</b> — Source system Medicom is currently unavailable. Try again in a few minutes.</div>
+    </div>
+    <div class="alert a-success">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      <div>All sources (12) were retrieved.</div>
+    </div>
+    <div class="alert a-warn">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+      <div>1/12 sources not retrieved. <a style="color:inherit; font-weight:600">Reload all sources again</a></div>
+    </div>
+    <div class="alert a-error">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      <div>Something went wrong. Please refresh the page.</div>
+    </div>
+  </div>
+</body>
+</html>

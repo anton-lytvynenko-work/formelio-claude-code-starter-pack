@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Brand color</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg-paper); font-family: var(--font-body); }
+  .row { display: flex; gap: 8px; }
+  .swatch {
+    flex: 1; aspect-ratio: 4 / 3; border-radius: var(--radius-sm);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 10px 12px; color: white; box-sizing: border-box;
+    font-size: 11px; line-height: 1.4; letter-spacing: 0.25px;
+  }
+  .swatch .name { font-weight: 600; font-size: 12px; }
+  .swatch .hex  { opacity: 0.85; font-family: var(--font-mono); }
+  .swatch.light { color: var(--fg-1); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="swatch" style="background:#0037E8">
+      <div class="name">primary.main</div><div class="hex">#0037E8</div>
+    </div>
+    <div class="swatch" style="background:#0029AE">
+      <div class="name">primary.dark</div><div class="hex">#0029AE</div>
+    </div>
+    <div class="swatch" style="background:#0094FF">
+      <div class="name">primary.light</div><div class="hex">#0094FF</div>
+    </div>
+    <div class="swatch light" style="background:#E6EBFD">
+      <div class="name">primary.50</div><div class="hex">#E6EBFD</div>
+    </div>
+    <div class="swatch light" style="background:#F4F2FF">
+      <div class="name">custom.magenta</div><div class="hex">#F4F2FF</div>
+    </div>
+  </div>
+</body>
+</html>

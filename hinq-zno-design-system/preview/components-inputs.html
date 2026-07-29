@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Form inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 18px 20px; background: var(--bg-paper); font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .label { font-size: 12px; font-weight: 500; color: var(--fg-2); }
+  .input {
+    height: 40px; padding: 0 14px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border-strong); background: white;
+    font-size: 14px; font-family: var(--font-body); color: var(--fg-1);
+    outline: none; transition: border-color 120ms, box-shadow 120ms;
+  }
+  .input:hover { border-color: var(--border-input-hover); }
+  .input:focus {
+    border-color: var(--hinq-primary-main);
+    /* second 1px ring inside, so the visual is a 2px border without shifting layout */
+    box-shadow: inset 0 0 0 1px var(--hinq-primary-main);
+  }
+  .helper { font-size: 11px; color: var(--fg-2); letter-spacing: 0.4px; }
+  .helper.error { color: var(--hinq-error-dark); }
+  .input.error { border-color: var(--hinq-error-main); }
+  .input.error:focus { box-shadow: inset 0 0 0 1px var(--hinq-error-main); }
+  .input.disabled { background: rgba(0,0,0,0.04); color: var(--fg-3); border-style: dashed; }
+  .check-row { display: flex; gap: 18px; align-items: center; }
+  .check { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; }
+  .box {
+    width: 18px; height: 18px; border-radius: 2px; border: 2px solid var(--fg-2);
+    display: inline-flex; align-items: center; justify-content: center; color: white;
+  }
+  .box.on { background: var(--hinq-primary-main); border-color: var(--hinq-primary-main); }
+  .radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--fg-2); display: inline-flex; align-items: center; justify-content: center; }
+  .radio.on { border-color: var(--hinq-primary-main); }
+  .radio.on::after { content:''; width:10px; height:10px; border-radius:50%; background: var(--hinq-primary-main); }
+  .switch { width: 36px; height: 20px; background: rgba(0,0,0,0.2); border-radius: 999px; position: relative; }
+  .switch::after { content:''; width:16px; height:16px; border-radius:50%; background:white; position:absolute; top:2px; left:2px; box-shadow:var(--elev-1); transition: 120ms; }
+  .switch.on { background: var(--hinq-primary-main); }
+  .switch.on::after { left: 18px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="field">
+      <span class="label">Client name</span>
+      <input class="input" value="J. de Vries" />
+      <span class="helper">Required</span>
+    </div>
+    <div class="field">
+      <span class="label">BSN</span>
+      <input class="input error" value="99999" />
+      <span class="helper error">Invalid BSN</span>
+    </div>
+    <div class="field">
+      <span class="label">Birthdate</span>
+      <input class="input disabled" value="—" disabled />
+      <span class="helper">From source system</span>
+    </div>
+    <div class="field">
+      <span class="label">Choices</span>
+      <div class="check-row">
+        <span class="check"><span class="box on">✓</span> Hix</span>
+        <span class="check"><span class="box"></span> Epic</span>
+        <span class="check"><span class="radio on"></span> Active</span>
+        <span class="check"><span class="radio"></span> Archived</span>
+        <span class="check"><span class="switch on"></span> Notify</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

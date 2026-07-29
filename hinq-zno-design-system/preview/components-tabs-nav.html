@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Tabs & list nav</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body {
+    margin: 0; padding: 18px 20px; background: var(--bg-paper); font-family: var(--font-body);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+  }
+
+  /* --- Tabs (MUI Tabs) --- */
+  .tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid var(--border);
+    /* Make the indicator the bottom of each tab so it sits flush with the rule */
+    margin-bottom: 0;
+  }
+  .tab {
+    position: relative;
+    padding: 12px 16px;
+    min-height: 48px;                  /* MUI default tab height */
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: 1.25;
+    color: var(--fg-2);
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;               /* overlap the 1px rule so the 2px indicator covers it */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: color 120ms, background-color 120ms;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tab:hover {
+    color: var(--fg-1);
+    background: rgba(0, 55, 232, 0.04);  /* MUI primary action hover */
+  }
+  .tab:focus-visible {
+    outline: 2px solid var(--hinq-primary-main);
+    outline-offset: -2px;
+  }
+  .tab.active {
+    color: var(--hinq-primary-main);
+    border-bottom-color: var(--hinq-primary-main);
+    font-weight: 600;
+  }
+  .tab.active:hover {
+    background: rgba(0, 55, 232, 0.08);
+  }
+
+  /* Count chip — MUI Chip size="small" */
+  .tab .count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    min-width: 20px;
+    padding: 0 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--fg-2);
+    transition: background-color 120ms, color 120ms;
+  }
+  .tab:hover .count { background: rgba(0, 0, 0, 0.12); color: var(--fg-1); }
+  .tab.active .count {
+    background: var(--hinq-primary-main);
+    color: white;
+  }
+
+  /* --- List nav (MUI List + ListItemButton) --- */
+  .nav {
+    display: flex; flex-direction: column; gap: 0;
+    padding: 4px 0;
+  }
+  .nav-h {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--fg-3);
+    padding: 8px 16px 4px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+  .nav-item {
+    display: flex; align-items: center; gap: 12px;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--fg-1);
+    cursor: pointer;
+    transition: background-color 120ms;
+    position: relative;
+  }
+  .nav-item:hover { background: rgba(0, 55, 232, 0.04); }
+  .nav-item:focus-visible {
+    outline: 2px solid var(--hinq-primary-main);
+    outline-offset: -2px;
+  }
+  .nav-item.active {
+    background: rgba(0, 55, 232, 0.08);
+    color: var(--hinq-primary-main);
+    font-weight: 600;
+  }
+  .nav-item.active::before {
+    content: "";
+    position: absolute; left: 0; top: 6px; bottom: 6px;
+    width: 3px;
+    background: var(--hinq-primary-main);
+    border-radius: 0 2px 2px 0;
+  }
+  .nav-item.active:hover { background: rgba(0, 55, 232, 0.12); }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: currentColor; flex-shrink: 0;
+    opacity: 0.6;
+  }
+  .nav-item.active .dot { opacity: 1; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" type="button">Overview</button>
+      <button class="tab active" role="tab" type="button" aria-selected="true">
+        Diagnoses &amp; episodes
+        <span class="count">7</span>
+      </button>
+      <button class="tab" role="tab" type="button">
+        Procedures
+        <span class="count">2</span>
+      </button>
+      <button class="tab" role="tab" type="button">
+        Encounters
+        <span class="count">14</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav" role="navigation">
+    <div class="nav-h">Network health dossier</div>
+    <div class="nav-item" tabindex="0"><span class="dot"></span>Personal data</div>
+    <div class="nav-item active" tabindex="0" aria-current="page"><span class="dot"></span>Medical history</div>
+    <div class="nav-item" tabindex="0"><span class="dot"></span>Medication</div>
+    <div class="nav-item" tabindex="0"><span class="dot"></span>Lab results</div>
+    <div class="nav-item" tabindex="0"><span class="dot"></span>Maternity</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 18px 20px; background: var(--bg-paper); font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px 20px; align-items: center; }
+  .label { font-size: 10px; color: var(--fg-2); font-family: var(--font-mono); letter-spacing: 0.4px; text-transform: uppercase; grid-column: 1 / -1; padding-top: 6px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 36px; padding: 0 16px; border-radius: var(--radius-sm);
+    font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.4px;
+    border: 1px solid transparent; cursor: pointer; user-select: none; text-transform: none;
+    transition: background-color 120ms;
+  }
+  .btn-contained { background: var(--hinq-primary-main); color: white; }
+  .btn-contained:hover { background: var(--hinq-primary-dark); }
+  .btn-outlined { background: transparent; color: var(--hinq-primary-main); border-color: rgba(0,55,232,0.5); }
+  .btn-outlined:hover { background: rgba(0,55,232,0.04); border-color: var(--hinq-primary-main); }
+  .btn-text { background: transparent; color: var(--hinq-primary-main); padding: 0 8px; }
+  .btn-text:hover { background: rgba(0,55,232,0.04); }
+  .btn-disabled { background: rgba(0,0,0,0.12); color: rgba(0,0,0,0.38); pointer-events: none; }
+  .btn-error    { background: var(--hinq-error-main); color: white; }
+  .btn-sm { height: 30px; font-size: 13px; padding: 0 10px; }
+  .btn-lg { height: 42px; font-size: 15px; padding: 0 22px; }
+  svg { width: 18px; height: 18px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="label">contained / outlined / text</div>
+    <button class="btn btn-contained">Request permission</button>
+    <button class="btn btn-outlined">Cancel</button>
+    <button class="btn btn-text">View all</button>
+
+    <div class="label">small / default / large</div>
+    <button class="btn btn-contained btn-sm">Save</button>
+    <button class="btn btn-contained">Save</button>
+    <button class="btn btn-contained btn-lg">Save</button>
+
+    <div class="label">disabled · error · with icon</div>
+    <button class="btn btn-disabled">Save</button>
+    <button class="btn btn-error">Remove access</button>
+    <button class="btn btn-outlined">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+      Filter
+    </button>
+  </div>
+</body>
+</html>

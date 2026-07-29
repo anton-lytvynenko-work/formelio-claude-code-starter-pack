@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Neutral / surface tokens</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg-paper); font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .swatch {
+    height: 92px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 8px 10px; box-sizing: border-box;
+    font-size: 11px; letter-spacing: 0.25px;
+  }
+  .name { font-weight: 600; font-size: 12px; }
+  .hex  { font-family: var(--font-mono); color: var(--fg-2); }
+  .role { color: var(--fg-2); font-size: 10px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="swatch" style="background:#FFFFFF">
+      <div><div class="name">bg.paper</div><div class="role">cards / dialogs</div></div>
+      <div class="hex">#FFFFFF</div>
+    </div>
+    <div class="swatch" style="background:#F6F2F7">
+      <div><div class="name">bg.default</div><div class="role">app canvas</div></div>
+      <div class="hex">#F6F2F7</div>
+    </div>
+    <div class="swatch" style="background:#F7F7F7">
+      <div><div class="name">bg.tableHeader</div><div class="role">table header row</div></div>
+      <div class="hex">#F7F7F7</div>
+    </div>
+    <div class="swatch" style="background:#000000; color:white;">
+      <div><div class="name" style="color:white">fg-1 / text.primary</div><div class="role" style="color:rgba(255,255,255,0.7)">body text</div></div>
+      <div class="hex" style="color:rgba(255,255,255,0.85)">#000000</div>
+    </div>
+    <div class="swatch" style="background:rgba(0,0,0,0.6); color:white;">
+      <div><div class="name" style="color:white">fg-2 / text.secondary</div><div class="role" style="color:rgba(255,255,255,0.7)">labels, hints</div></div>
+      <div class="hex" style="color:rgba(255,255,255,0.85)">rgba(0,0,0,.6)</div>
+    </div>
+    <div class="swatch" style="background:rgba(0,0,0,0.45); color:white;">
+      <div><div class="name" style="color:white">fg-3 / disabled</div><div class="role" style="color:rgba(255,255,255,0.7)">disabled text</div></div>
+      <div class="hex" style="color:rgba(255,255,255,0.85)">rgba(0,0,0,.45)</div>
+    </div>
+    <div class="swatch" style="background:rgba(0,0,0,0.14)">
+      <div><div class="name">divider</div><div class="role">borders, rules</div></div>
+      <div class="hex">rgba(0,0,0,.14)</div>
+    </div>
+    <div class="swatch" style="background:rgba(0,55,232,0.08)">
+      <div><div class="name">action.selected</div><div class="role">primary @ 8%</div></div>
+      <div class="hex">rgba(0,55,232,.08)</div>
+    </div>
+  </div>
+</body>
+</html>

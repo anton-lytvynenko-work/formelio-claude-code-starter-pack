@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Logo & avatars</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 22px 24px; background: var(--bg-paper); font-family: var(--font-body); }
+  .row { display: flex; align-items: center; gap: 28px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .meta { font-size: 10px; color: var(--fg-2); font-family: var(--font-mono); letter-spacing: 0.4px; }
+  .logo-wide { height: 32px; }
+  .mono {
+    width: 40px; height: 40px; border-radius: 50%; background: #DEE0FF;
+    display: flex; align-items: center; justify-content: center; color: var(--hinq-primary-main);
+    font-family: var(--font-display); font-weight: 600; font-size: 16px;
+  }
+  .avatar-prim { width: 36px; height: 36px; border-radius: 50%; background: var(--hinq-primary-main); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px; }
+  .avatar-sec  { width: 36px; height: 36px; border-radius: 50%; background: var(--hinq-secondary-main); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item">
+      <img class="logo-wide" src="../assets/hinq_logo.svg" alt="HINQ" />
+      <div class="meta">primary logotype · 1284×372</div>
+    </div>
+    <div class="item">
+      <div class="mono">H</div>
+      <div class="meta">monogram · 40×40 · #DEE0FF</div>
+    </div>
+    <div class="item">
+      <div class="avatar-prim">DV</div>
+      <div class="meta">avatar · practitioner</div>
+    </div>
+    <div class="item">
+      <div class="avatar-sec">JV</div>
+      <div class="meta">avatar · client</div>
+    </div>
+  </div>
+</body>
+</html>

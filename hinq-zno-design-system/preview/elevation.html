@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Elevation</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 28px 24px; background: var(--bg-default); font-family: var(--font-body); }
+  .row { display: flex; gap: 28px; align-items: flex-end; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .box {
+    width: 96px; height: 64px; background: var(--bg-paper);
+    border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;
+    color: var(--fg-2); font-size: 11px;
+  }
+  .name { font-weight: 600; font-size: 12px; }
+  .px { color: var(--fg-2); font-family: var(--font-mono); font-size: 11px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:var(--elev-0)">flat</div><div class="name">elev‑0</div><div class="px">cards (default)</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--elev-1)"></div><div class="name">elev‑1</div><div class="px">raised paper</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--elev-2)"></div><div class="name">elev‑2</div><div class="px">app bar</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--elev-4)"></div><div class="name">elev‑4</div><div class="px">snackbar</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--elev-8)"></div><div class="name">elev‑8</div><div class="px">popover · menu</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--elev-24)"></div><div class="name">elev‑24</div><div class="px">dialog · drawer</div></div>
+  </div>
+</body>
+</html>

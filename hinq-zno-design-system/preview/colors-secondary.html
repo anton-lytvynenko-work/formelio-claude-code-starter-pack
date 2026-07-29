@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Secondary & accents</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg-paper); font-family: var(--font-body); }
+  .row { display: flex; gap: 8px; }
+  .swatch {
+    flex: 1; aspect-ratio: 4 / 3; border-radius: var(--radius-sm);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 10px 12px; color: white; box-sizing: border-box;
+    font-size: 11px; line-height: 1.4; letter-spacing: 0.25px;
+  }
+  .swatch .name { font-weight: 600; font-size: 12px; }
+  .swatch .hex  { opacity: 0.85; font-family: var(--font-mono); }
+  .swatch.light { color: var(--fg-1); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="swatch" style="background:#9D5E97">
+      <div class="name">secondary.main</div><div class="hex">#9D5E97</div>
+    </div>
+    <div class="swatch" style="background:#70446B">
+      <div class="name">secondary.dark</div><div class="hex">#70446B</div>
+    </div>
+    <div class="swatch light" style="background:#EDCDEA">
+      <div class="name">secondary.light</div><div class="hex">#EDCDEA</div>
+    </div>
+    <div class="swatch" style="background:#FF6464">
+      <div class="name">logo accent</div><div class="hex">#FF6464</div>
+    </div>
+    <div class="swatch light" style="background:#F6F2F7; border:1px solid var(--border)">
+      <div class="name">bg.default</div><div class="hex">#F6F2F7</div>
+    </div>
+  </div>
+</body>
+</html>

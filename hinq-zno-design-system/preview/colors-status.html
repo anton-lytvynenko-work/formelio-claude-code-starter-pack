@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Status colors</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg-paper); font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .col { display: flex; flex-direction: column; gap: 6px; }
+  .head { font-family: var(--font-display); font-weight: 600; font-size: 12px; color: var(--fg-1); }
+  .swatch {
+    height: 40px; border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 10px; color: white; box-sizing: border-box;
+    font-size: 11px; letter-spacing: 0.25px;
+  }
+  .swatch .hex { font-family: var(--font-mono); opacity: 0.85; }
+  .swatch.light { color: var(--fg-1); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="col">
+      <div class="head">error / warning</div>
+      <div class="swatch" style="background:#FF6464"><span>main</span><span class="hex">#FF6464</span></div>
+      <div class="swatch" style="background:#CA4949"><span>dark</span><span class="hex">#CA4949</span></div>
+      <div class="swatch light" style="background:#FFDBDB"><span>light</span><span class="hex">#FFDBDB</span></div>
+    </div>
+    <div class="col">
+      <div class="head">info</div>
+      <div class="swatch" style="background:#19A5F1"><span>main</span><span class="hex">#19A5F1</span></div>
+      <div class="swatch" style="background:#1275AA"><span>dark</span><span class="hex">#1275AA</span></div>
+      <div class="swatch light" style="background:#C1ECFF"><span>light</span><span class="hex">#C1ECFF</span></div>
+    </div>
+    <div class="col">
+      <div class="head">success</div>
+      <div class="swatch" style="background:#51B277"><span>main</span><span class="hex">#51B277</span></div>
+      <div class="swatch" style="background:#33754D"><span>dark</span><span class="hex">#33754D</span></div>
+      <div class="swatch light" style="background:#C2FFD2"><span>light</span><span class="hex">#C2FFD2</span></div>
+    </div>
+    <div class="col">
+      <div class="head">custom</div>
+      <div class="swatch light" style="background:#FE9494"><span>red</span><span class="hex">#FE9494</span></div>
+      <div class="swatch light" style="background:#FFE0B2"><span>orange</span><span class="hex">#FFE0B2</span></div>
+      <div class="swatch light" style="background:#D9EBDC"><span>green</span><span class="hex">#D9EBDC</span></div>
+    </div>
+  </div>
+</body>
+</html>

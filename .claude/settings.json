@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"Session complete — run /skill-updater before /clear to capture learnings from this session.\"}'"
+          }
+        ]
+      }
+    ]
+  }
+}

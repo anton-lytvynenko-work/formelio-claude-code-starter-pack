@@ -1,0 +1,217 @@
+/* ============================================================
+   HINQ ZNO Design System — Foundations
+   Source of truth: zno-client/src/lib/theme/{palette,typography}.mui.ts
+   Mirrors the MUI v5.16 theme used in the production HINQ ZNO app.
+   ============================================================ */
+
+/* Webfonts ----------------------------------------------------------------
+   Both families self-hosted as variable fonts (uploaded as brand files). */
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype-variations"),
+       url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype-variations"),
+       url("fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-VariableFont_wdth_wght.ttf") format("truetype-variations"),
+       url("fonts/OpenSans-VariableFont_wdth_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf") format("truetype-variations"),
+       url("fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* --------------------------------------------------------
+     COLOR — base ramps (raw values from palette.mui.ts)
+     -------------------------------------------------------- */
+
+  /* Brand / primary — the only color that says "HINQ" */
+  --hinq-primary-main:   #0037E8; /* Royal blue. Used on nearly every CTA, active nav, links, focus ring. */
+  --hinq-primary-dark:   #0029AE;
+  --hinq-primary-light:  #0094FF;
+  --hinq-primary-50:     #E6EBFD; /* hover / selected backgrounds */
+  --hinq-primary-100:    #B3C2F8;
+  --hinq-primary-on:     #FFFFFF;
+
+  /* Secondary — quiet purple, used for the "patient" side of conversation,
+     and for the lavender app background tint. */
+  --hinq-secondary-main:  #9D5E97;
+  --hinq-secondary-dark:  #70446B;
+  --hinq-secondary-light: #EDCDEA;
+  --hinq-secondary-on:    #FFFFFF;
+
+  /* Logo accent — coral red. Only ever appears INSIDE the HINQ logo mark.
+     Never use this as a status/error color — palette.error has its own red. */
+  --hinq-logo-accent:    #FF6464;
+
+  /* Status — semantic */
+  --hinq-error-main:    #FF6464;
+  --hinq-error-dark:    #CA4949;
+  --hinq-error-light:   #FFDBDB;
+
+  --hinq-warning-main:  #FF6464; /* yes — same as error in the source theme */
+  --hinq-warning-dark:  #CA4949;
+  --hinq-warning-light: #FFDBDB;
+
+  --hinq-info-main:     #19A5F1;
+  --hinq-info-dark:     #1275AA;
+  --hinq-info-light:    #C1ECFF;
+
+  --hinq-success-main:  #51B277;
+  --hinq-success-dark:  #33754D;
+  --hinq-success-light: #C2FFD2;
+
+  /* "Custom" muted accent fills — used as soft backgrounds on chips & callouts */
+  --hinq-custom-red:     #FE9494;
+  --hinq-custom-orange:  #FFE0B2;
+  --hinq-custom-green:   #D9EBDC;
+  --hinq-custom-magenta: #F4F2FF;
+
+  /* --------------------------------------------------------
+     SEMANTIC color tokens — what to actually reach for
+     -------------------------------------------------------- */
+  --bg-default:        #F6F2F7; /* App canvas — a barely-perceptible warm lavender.
+                                    Patients see this on every screen; it differentiates ZNO
+                                    from the stark-white EHRs the app aggregates. */
+  --bg-paper:          #FFFFFF; /* Cards, dialogs, drawers, table rows */
+  --bg-table-header:   #F7F7F7; /* Slightly cooler than bg-default */
+  --bg-hover:          rgba(0, 55, 232, 0.04);   /* primary @ 4%  — list/row hover */
+  --bg-selected:       rgba(0, 55, 232, 0.08);   /* primary @ 8%  — selected row */
+  --bg-focus:          rgba(0, 55, 232, 0.12);   /* primary @ 12% — focus ring fill */
+  --bg-disabled:       rgba(0, 0, 0, 0.12);
+
+  --fg-1:              #000000;             /* primary text */
+  --fg-2:              rgba(0, 0, 0, 0.60);  /* secondary text */
+  --fg-3:              rgba(0, 0, 0, 0.45);  /* disabled / hint */
+  --fg-on-primary:     #FFFFFF;
+  --fg-link:           #0037E8;
+
+  --border:            rgba(0, 0, 0, 0.14);  /* divider — softer than MUI default */
+  --border-strong:     rgba(0, 0, 0, 0.23);  /* outlined input idle */
+  --border-input-hover:#000000;
+
+  /* --------------------------------------------------------
+     RADIUS — MUI default scale, used sparingly. The system is
+     low-radius; chips and circular buttons are the only pills.
+     -------------------------------------------------------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;   /* default. Buttons, inputs, cards. */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  /* --------------------------------------------------------
+     ELEVATION — MUI elevation 0/1/4/8/16/24, restated.
+     The app stays mostly flat: raised surfaces are dialogs,
+     popovers, the patient-deceased ribbon, and floating chips.
+     -------------------------------------------------------- */
+  --elev-0: none;
+  --elev-1: 0 2px 1px -1px rgba(0,0,0,0.20), 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.12);
+  --elev-2: 0 3px 1px -2px rgba(0,0,0,0.20), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  --elev-4: 0 2px 4px -1px rgba(0,0,0,0.20), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
+  --elev-8: 0 5px 5px -3px rgba(0,0,0,0.20), 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12);
+  --elev-16: 0 8px 10px -5px rgba(0,0,0,0.20), 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12);
+  --elev-24: 0 11px 15px -7px rgba(0,0,0,0.20), 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12);
+
+  /* --------------------------------------------------------
+     SPACING — MUI 8pt base. Use multiples of --space.
+     -------------------------------------------------------- */
+  --space:    8px;
+  --space-1:  8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-8:  64px;
+
+  --page-header-height: 64px;
+  --nav-width-expanded: 240px;
+  --nav-width-collapsed: 64px;
+
+  /* --------------------------------------------------------
+     TYPOGRAPHY — base
+     -------------------------------------------------------- */
+  --font-display: 'Montserrat', system-ui, sans-serif; /* All h1–h6 */
+  --font-body:    'Open Sans', system-ui, sans-serif;  /* Body, UI, tables */
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* ============================================================
+   TYPE — semantic classes that mirror the MUI Typography variants
+   used throughout ZNO. Match the values in typography.mui.ts.
+   ============================================================ */
+
+html {
+  font-family: var(--font-body);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.h1, h1 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 28px; line-height: 117%; letter-spacing: 0;
+  margin: 0;
+}
+.h2, h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 24px; line-height: 120%; letter-spacing: 0.25px;
+  margin: 0;
+}
+.h3, h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 20px; line-height: 120%; letter-spacing: 0;
+  margin: 0;
+}
+.h4, h4 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 18px; line-height: 124%; letter-spacing: 0.25px;
+  margin: 0;
+}
+.h5, h5 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 16px; line-height: 133%; letter-spacing: 0;
+  margin: 0;
+}
+.h6, h6 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; line-height: 150%; letter-spacing: 0.15px;
+  margin: 0;
+}
+
+.subtitle1 { font-size: 13px; line-height: 150%; letter-spacing: 0.5px;  font-weight: 600; }
+.subtitle2 { font-size: 12px; line-height: 150%; letter-spacing: 0.25px; font-weight: 600; }
+
+.b1, p     { font-size: 14px; line-height: 150%; letter-spacing: 0.25px; font-weight: 400; margin: 0; }
+.b2        { font-size: 12px; line-height: 150%; letter-spacing: 0.25px; font-weight: 400; }
+.caption   { font-size: 12px; line-height: 150%; letter-spacing: 0.4px;  font-weight: 400; color: var(--fg-2); }
+.overline  { font-size: 11px; line-height: 100%; letter-spacing: 1px;    font-weight: 400; text-transform: none; }
+
+/* MUI button text: 14px, 500, slight wider tracking, Open Sans (NOT Montserrat) */
+.button-text {
+  font-family: var(--font-body);
+  font-size: 14px; line-height: 24px; letter-spacing: 0.4px; font-weight: 500;
+  text-transform: none;
+}

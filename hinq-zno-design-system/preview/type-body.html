@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Body & UI type (Open Sans)</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--bg-paper); }
+  .row { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 16px; padding: 6px 0; }
+  .row + .row { border-top: 1px solid var(--border); }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--fg-2); white-space: nowrap; }
+</style>
+</head>
+<body>
+  <div class="row"><div class="subtitle1">SUBTITLE 1 · A bold lead‑in for a card</div><div class="meta">subtitle1 · 13/150 · 600 · 0.5</div></div>
+  <div class="row"><div class="subtitle2">Subtitle 2 · table column header</div><div class="meta">subtitle2 · 12/150 · 600 · 0.25</div></div>
+  <div class="row"><div class="b1">Body 1 · the default running text in tables and cards.</div><div class="meta">body1 · 14/150 · 400 · 0.25</div></div>
+  <div class="row"><div class="b2">Body 2 · for tighter list rows and dense data.</div><div class="meta">body2 · 12/150 · 400 · 0.25</div></div>
+  <div class="row"><div class="caption">Caption · timestamps, helper text, hints</div><div class="meta">caption · 12/150 · 400 · 0.4</div></div>
+  <div class="row"><div class="overline">overline · section eyebrow</div><div class="meta">overline · 11/100 · 400 · 1</div></div>
+  <div class="row"><div class="button-text">Button · sentence case, no caps</div><div class="meta">button · 14/24 · 500 · 0.4</div></div>
+</body>
+</html>

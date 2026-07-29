@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HINQ — Type pairing in use</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--bg-default); }
+  .card { background: var(--bg-paper); border-radius: var(--radius-sm); padding: 20px 24px; }
+  .head-row { display: flex; align-items: center; gap: 16px; }
+  .chip-pall {
+    background: var(--hinq-error-main); color: white; font-size: 13px;
+    font-weight: 500; padding: 6px 10px; border-radius: var(--radius-pill);
+    letter-spacing: 0.16px;
+  }
+  .meta { color: var(--fg-2); margin-top: 4px; }
+  .sub { color: var(--fg-2); margin-top: 12px; max-width: 60ch; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="head-row">
+      <div class="h1">Personal data</div>
+      <div class="chip-pall">Palliatively marked patient</div>
+    </div>
+    <div class="b2 meta">All sources (12) were retrieved · Last updated 11:42</div>
+    <div class="b1 sub">No data was found in the resources you have access to. Try to retrieve data from another healthcare provider.</div>
+  </div>
+</body>
+</html>
